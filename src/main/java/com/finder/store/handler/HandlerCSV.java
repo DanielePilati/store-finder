@@ -23,12 +23,16 @@ public class HandlerCSV {
 	@EventListener
 	public void onApplicationEvent(ContextRefreshedEvent event) {
 
+<<<<<<< HEAD:src/main/java/com/finder/store/handler/HandlerCSV.java
 		String filePath = new File("./src/main/resources/csv/stores.csv").getAbsolutePath();
 		ArrayList<Store> stores = storeReader(new File(filePath));
 		for (int i = 0; i < stores.size(); i++) {
 			StoreService.save(stores.get(i));
 		}
 		System.out.println("hello" + storeReader(new File(filePath)));
+=======
+		System.out.println("hello");
+>>>>>>> parent of 0bbdbed (testing csv conversion):src/main/java/com/finder/store/component/HandlerCSV.java
 	}
 
 	// Reader
