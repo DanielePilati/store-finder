@@ -25,9 +25,7 @@ public class HandlerCSV {
 		ArrayList<Store> dataList = new ArrayList<Store>();
 		ArrayList<String> lines = new ArrayList<String>();
 
-		try {
-			Scanner scanner = new Scanner(source);
-
+		try (Scanner scanner = new Scanner(source)) {
 			while (scanner.hasNext()) {
 				lines.add(scanner.nextLine());
 			}
