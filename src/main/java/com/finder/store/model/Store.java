@@ -46,6 +46,24 @@ public class Store {
 	
 	private String plusService;
 	
+	// CONSTRUCTOR	
+	
+	public Store(String name, String address, String city, String province, String cap, String longitude, String latitude,
+			String phone, String openingHours, String director, String activity, String plusService) {
+		this.name = name;
+		this.address = address;
+		this.province = province;
+		this.city = city;
+		this.cap = cap;
+		this.longitude = longitude;
+		this.latitude = latitude;
+		this.phone = phone;
+		this.openingHours = openingHours;
+		this.activity = activity;
+		this.plusService = plusService;
+		this.director=director;
+
+	}
 	
 	// GETTER AND SETTER
 	
