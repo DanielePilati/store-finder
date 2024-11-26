@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<!-- BOOTSTRAP CSS -->
+	<link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}">
+	<title>Store-Finder</title>
+</head>
+
+
+<body>
+	<!--header-->
+	<header>
+
+	</header>
+
+	<!--main-->
+	<main>
+		<div class="container">
+			<div class="row">
+				<h1 class="col-12 text-center">Welcome to Home</h1>
+				
+				<hr class="my-3">
+				
+				<form class="col-12 row form-inline my-2 my-lg-0">
+					<div class="col-11 ">
+						<input class="form-control" type="search" placeholder="Insert address" aria-label="Search">
+					</div>
+					<button class="col-auto btn btn-outline-dark " type="submit">Search</button>
+				</form>
+				
+				<hr class="my-3">
+				
+				<div class="col-12 container text-center">io sarò una mappa</div>
+			</div>
+		</div>
+	</main>
+
+	<!--footer-->
+	<footer>
+
+	</footer>
+
+	<!-- BOOTSTRAP SCRIPT -->
+	<script th:src="@{/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js}" defer></script>
+</body>
+
+</html>
