@@ -9,7 +9,7 @@ import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "shops")
-public class Shop {
+public class Store {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,21 +28,42 @@ public class Shop {
 	private String province;
 	
 	@NotBlank(message = "Cannot be Empty")
-	private int cap;
+	private String cap;
 	
 	@NotBlank(message = "Cannot be Empty")
-	private float latitude;
+	private String latitude;
 	
 	@NotBlank(message = "Cannot be Empty")
-	private float longitude;
+	private String longitude;
 	
 	private String phone;
 	
-	private String hours;
+	private String openingHours;
 	
-	private boolean activity;
+	private String director;
+	
+	private String activity;
 	
 	private String plusService;
+	
+	// CONSTRUCTOR	
+	
+	public Store(String name, String address, String city, String province, String cap, String longitude, String latitude,
+			String phone, String openingHours, String director, String activity, String plusService) {
+		this.name = name;
+		this.address = address;
+		this.province = province;
+		this.city = city;
+		this.cap = cap;
+		this.longitude = longitude;
+		this.latitude = latitude;
+		this.phone = phone;
+		this.openingHours = openingHours;
+		this.activity = activity;
+		this.plusService = plusService;
+		this.director=director;
+
+	}
 	
 	// GETTER AND SETTER
 	
@@ -76,22 +97,22 @@ public class Shop {
 	public void setProvince(String province) {
 		this.province = province;
 	}
-	public int getCap() {
+	public String getCap() {
 		return cap;
 	}
-	public void setCap(int cap) {
+	public void setCap(String cap) {
 		this.cap = cap;
 	}
-	public float getLatitude() {
+	public String getLatitude() {
 		return latitude;
 	}
-	public void setLatitude(float latitude) {
+	public void setLatitude(String latitude) {
 		this.latitude = latitude;
 	}
-	public float getLongitude() {
+	public String getLongitude() {
 		return longitude;
 	}
-	public void setLongitude(float longitude) {
+	public void setLongitude(String longitude) {
 		this.longitude = longitude;
 	}
 	public String getPhone() {
@@ -101,15 +122,15 @@ public class Shop {
 		this.phone = phone;
 	}
 	public String getHours() {
-		return hours;
+		return openingHours;
 	}
 	public void setHours(String hours) {
-		this.hours = hours;
+		this.openingHours = hours;
 	}
-	public boolean isActivity() {
+	public String isActivity() {
 		return activity;
 	}
-	public void setActivity(boolean activity) {
+	public void setActivity(String activity) {
 		this.activity = activity;
 	}
 	public String getPlusService() {
@@ -117,5 +138,25 @@ public class Shop {
 	}
 	public void setPlusService(String plusService) {
 		this.plusService = plusService;
+	}
+
+	public String getOpeningHours() {
+		return openingHours;
+	}
+
+	public void setOpeningHours(String openingHours) {
+		this.openingHours = openingHours;
+	}
+
+	public String getDirector() {
+		return director;
+	}
+
+	public void setDirector(String director) {
+		this.director = director;
+	}
+
+	public String getActivity() {
+		return activity;
 	}
 }
