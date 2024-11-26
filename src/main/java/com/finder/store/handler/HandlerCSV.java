@@ -1,4 +1,4 @@
-package com.finder.store.component;
+package com.finder.store.handler;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -11,30 +11,29 @@ import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
 import com.finder.store.model.Store;
-import com.finder.store.service.StoreService;
 
 @Component
 public class HandlerCSV {
-
+	// TEST
 	@Autowired
 	StoreService StoreService;
-	
-	//Read csv from resources
-	
+
+	// Read csv from resources
+
 	@EventListener
 	public void onApplicationEvent(ContextRefreshedEvent event) {
-			
+
 		String filePath = new File("./src/main/resources/csv/stores.csv").getAbsolutePath();
-		ArrayList<Store> stores = csvReader(new File(filePath));
-		for(int i = 0 ; i < stores.size() ; i++) {
+		ArrayList<Store> stores = storeReader(new File(filePath));
+		for (int i = 0; i < stores.size(); i++) {
 			StoreService.save(stores.get(i));
 		}
-		System.out.println("hello"+ csvReader(new File(filePath)));
+		System.out.println("hello" + storeReader(new File(filePath)));
 	}
 
-	//Reader
-	
-	public static ArrayList<Store> csvReader(File source) {
+	// Reader
+
+	public static ArrayList<Store> storeReader(File source) {
 
 		ArrayList<Store> dataList = new ArrayList<Store>();
 		ArrayList<String> lines = new ArrayList<String>();
