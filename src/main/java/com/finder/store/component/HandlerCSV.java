@@ -16,8 +16,10 @@ public class HandlerCSV {
 
 	@EventListener
 	public void onApplicationEvent(ContextRefreshedEvent event) {
-
-		System.out.println("hello");
+		
+		String filePath = new File("./src/main/resources/csv/stores.csv").getAbsolutePath();
+		csvReader(new File(filePath));
+		System.out.println("hello"+ csvReader(new File(filePath)));
 	}
 
 	public static ArrayList<Store> csvReader(File source) {
