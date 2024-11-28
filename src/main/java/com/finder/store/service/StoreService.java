@@ -19,8 +19,8 @@ public class StoreService {
 		return storeRepo.findAll();
 	}
 
-	public Optional<Store> getByAddress(String address) {
-		return storeRepo.findByAddress(address);
+	public List<Store> getByAddress(String address) {
+		return storeRepo.findByAddressContains(address);
 	}
 
 	public Store save(Store store) {

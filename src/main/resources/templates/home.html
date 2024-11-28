@@ -24,9 +24,10 @@
 				<!--search-->
 				<form class="col-12 row form-inline my-2 my-lg-0" method="get" th:action="@{/stores/search}">
 					<div class="col-11 ">
-						<input class="form-control" type="search" placeholder="Insert address" aria-label="Search">
+						<input class="form-control" type="search" placeholder="Insert address" aria-label="Search"
+							th:field="${search.address}">
 					</div>
-					<button class="col-auto btn btn-outline-dark " type="submit">Search</button>
+					<button class="col-auto btn btn-dark btn-outline-light" type="submit">Search</button>
 				</form>
 
 				<hr class="col-12 my-3">
@@ -71,7 +72,17 @@
 						</tbody>
 					</table>
 				</th:block>
-
+				
+				
+				
+				<!-- to home bottuon-->
+				<th:block th:if="${searched}">
+					<hr class="col-12 my-3">
+					<div class="text-center">
+						<a class="col-auto btn btn-dark btn-outline-light" th:href="@{/}">Return to full list</a>
+					</div>
+				</th:block>
+				
 			</div>
 		</div>
 	</main>
