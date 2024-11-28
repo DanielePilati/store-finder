@@ -16,22 +16,62 @@
 
 	<!--main-->
 	<main>
-		<div class="container">
+		<div class="container-flex mx-5">
 			<div class="row">
 				<h1 class="col-12 text-center">Welcome to Home</h1>
-				
-				<hr class="my-3">
-				
-				<form class="col-12 row form-inline my-2 my-lg-0">
+
+				<hr class="col-12 my-3">
+				<!--search-->
+				<form class="col-12 row form-inline my-2 my-lg-0" method="get" th:action="@{/stores/search}">
 					<div class="col-11 ">
 						<input class="form-control" type="search" placeholder="Insert address" aria-label="Search">
 					</div>
 					<button class="col-auto btn btn-outline-dark " type="submit">Search</button>
 				</form>
-				
-				<hr class="my-3">
-				
-				<div class="col-12 container text-center">io sarò una mappa</div>
+
+				<hr class="col-12 my-3">
+				<!--index store-->
+				<th:block th:unless="${stores.isEmpty}">
+					<table class="col-12 table table-dark table-striped">
+						<thead>
+							<tr>
+								<th scope="col">#</th>
+								<th scope="col">Name</th>
+								<th scope="col">Address</th>
+								<th scope="col">City</th>
+								<th scope="col">Province</th>
+								<th scope="col">Cap</th>
+								<th scope="col">Latitude</th>
+								<th scope="col">Longitude</th>
+								<th scope="col">Phone</th>
+								<th scope="col">Opening Hours</th>
+								<th scope="col">Director ID</th>
+								<th scope="col">In Activity</th>
+								<th scope="col">Plus Services</th>
+							</tr>
+						</thead>
+						<tbody>
+							<th:block th:each="store : ${stores}">
+								<tr>
+									<td th:text="${store.id}"></td>
+									<td th:text="${store.name}"></td>
+									<td th:text="${store.address}"></td>
+									<td th:text="${store.city}"></td>
+									<td th:text="${store.province}"></td>
+									<td th:text="${store.cap}"></td>
+									<td th:text="${store.latitude}"></td>
+									<td th:text="${store.longitude}"></td>
+									<td th:text="${store.phone}"></td>
+									<td th:text="${store.openingHours}"></td>
+									<td th:text="${store.director}"></td>
+									<td th:text="${store.activity}"></td>
+									<td th:text="${store.plusService}"></td>
+								</tr>
+							</th:block>
+						</tbody>
+					</table>
+				</th:block>
+
 			</div>
 		</div>
 	</main>
