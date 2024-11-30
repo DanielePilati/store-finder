@@ -1,5 +1,6 @@
 package com.finder.store.controller;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,7 +19,8 @@ public class MainController {
 	StoreService storeService;
 	
 	@GetMapping()
-	public String homePage(Model model){	
+	public String homePage(Model model){
+		
 		model.addAttribute("searched", false);
 		model.addAttribute("search", new Store());
 		//store index
