@@ -75,9 +75,9 @@
 
 				
 				<th:block>
-					<form class="col-4 mb-3 text-center" method="post" th:action="@{/stores/update}">
+					<form class="col-4 mb-3 text-center" method="post" th:action="@{/stores/update}" enctype="multipart/form-data">
 						<label for="formFile" class="form-label">Default file input example</label>
-						<input class="form-control" type="file" id="formFile">
+						<input class="form-control" name="file" type="file" id="formFile" accept=".csv">
 						<button class="btn btn-dark btn-outline-light my-2" type="submit">upload</button>
 					</form>
 				</th:block>

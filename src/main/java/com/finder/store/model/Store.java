@@ -1,5 +1,6 @@
 package com.finder.store.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,6 +17,7 @@ public class Store {
 	private int id;
 	
 	@NotBlank(message = "Cannot be Empty")
+	@Column(unique = true)
 	private String name;
 	
 	@NotBlank(message = "Cannot be Empty")
